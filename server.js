@@ -2,8 +2,8 @@ const cluster = require('cluster');
 const numWorkers = require('os').cpus().length; // My Computer has 4 cores
 
 const Queue = require('./lib/queue');
-const helper = require('./helper');
-const mandelbrot = require('./mandelbrot');
+const helper = require('./lib/helper');
+const mandelbrot = require('./lib/mandelbrot');
 
 // INPUT FIELDS
 const displayDimension = 21;
