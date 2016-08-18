@@ -1,18 +1,20 @@
 const cluster = require('cluster');
-const numWorkers = require('os').cpus().length; // My Computer has 4 cores
+const numCores = require('os').cpus().length
 
 const Queue = require('./lib/queue');
 const helper = require('./lib/helper');
 const mandelbrot = require('./lib/mandelbrot');
 
 // INPUT FIELDS
-const displayDimension = 21;
-const partitionScheme = 'squareRegion'; // Types are squareRegion, courseGrainRowRegion, dynamicRowRegion
+const displayDimension = 1001;
+const partitionScheme = 'dynamicRowRegion'; // Types are squareRegion, courseGrainRowRegion, dynamicRowRegion
+const numWorkers = numCores; // My Computer has 4 cores
 
 const mandelbrotJobs = helper.createMandelbrotJobs(displayDimension, numWorkers, partitionScheme);
 const grid = helper.createGrid(displayDimension);
 
 if (cluster.isMaster) {
+  let startTime = new Date().getTime();
   const workers = [];
   for (var i = 0; i < numWorkers; i++) {
     var worker = cluster.fork();   
@@ -37,7 +39,9 @@ if (cluster.isMaster) {
           const n = message.n;
           grid[i][j] = n;
           if (!mandelbrotJobs.checkLength()) {
+            let endTime = new Date().getTime();
             console.log(grid);
+            console.log('Total time', endTime - startTime);
           }    
       }
     });
