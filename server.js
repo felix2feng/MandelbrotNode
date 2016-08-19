@@ -6,7 +6,7 @@ const helper = require('./lib/helper');
 const mandelbrot = require('./lib/mandelbrot');
 
 // INPUT FIELDS
-const displayDimension = 1001;
+const displayDimension = 21;
 const partitionScheme = 'dynamicRowRegion'; // Types are squareRegion, courseGrainRowRegion, dynamicRowRegion
 const numWorkers = numCores; // My Computer has 4 cores
 

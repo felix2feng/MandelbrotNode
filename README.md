@@ -3,7 +3,6 @@ Implementing Mandelbrot Set in Node.js using clusters in a parralel form. Some i
 
 ## Features
 - Visualized in matrix form in the console
-- 
 - Allows for 3 choices of partitioning: squareRegion, courseGrainRowRegion, dynamicRowRegion
 - Basic tests using the expect library
 
