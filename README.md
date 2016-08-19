@@ -1,5 +1,5 @@
 # MandelbrotNode
-Implementing Mandelbrot Set in Node.js using clusters in a parralel form. Some inspiration has been taken from [Craig Nicol's implementation](https://craignicol.wordpress.com/2014/07/29/the-node-js-mandelbrot-set/).
+Implementing Mandelbrot Set in Node.js using clusters in a parallel form. Some inspiration has been taken from [Craig Nicol's implementation](https://craignicol.wordpress.com/2014/07/29/the-node-js-mandelbrot-set/).
 
 ## Features
 - Visualized in matrix form in the console
